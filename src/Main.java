@@ -6,7 +6,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import bridge.exibicao.ExibeRelatorioNoConsole;
 import bridge.modelo.Produto;
+import bridge.relatorios.GeradorDeRelatorio;
+import bridge.relatorios.RelatorioSimples;
 
 public class Main {
 
@@ -28,8 +31,9 @@ public class Main {
 
         System.out.println(produtos);
 
-
-
+        ExibeRelatorioNoConsole erc = new ExibeRelatorioNoConsole();
+        GeradorDeRelatorio rs = new RelatorioSimples(erc);
+        rs.geraRelatorios(produtos);
 
     }
 }
