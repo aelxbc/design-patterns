@@ -3,9 +3,12 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../design_patterns/postgresql-42.3.3.jar!/" />
       <root url="file://$PROJECT_DIR$/../design_patterns" />
+      <root url="jar://D:/db/sqlite-tools-win32-x86-3380200/sqlite-jdbc-3.7.2.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://D:/db/sqlite-tools-win32-x86-3380200/sqlite-jdbc-3.7.2.jar!/" />
+    </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/../design_patterns" recursive="false" />
   </library>
 </component>
