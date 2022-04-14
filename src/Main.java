@@ -39,8 +39,7 @@ public class Main {
         try{
             Statement stmt = connection.createStatement();
 
-            ResultSet resultSet = stmt.executeQuery("select * from produtos " +
-                    "where status = true;");
+            ResultSet resultSet = stmt.executeQuery("select * from produtos ");
 
             while(resultSet.next()){
                 String nome = resultSet.getString("nome");
