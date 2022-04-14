@@ -2,15 +2,12 @@ package bridge.relatorios;
 
 import bridge.exibicao.ExibeRelatorio;
 import bridge.modelo.Produto;
-import bridge.relatorios.GeradorDeRelatorio;
 
 import java.util.List;
 
-public class RelatorioSimples extends GeradorDeRelatorio {
+public class RelatorioDetalhado extends GeradorDeRelatorio{
 
-    public RelatorioSimples(ExibeRelatorio exibidor) {
-        super(exibidor);
-    }
+    public RelatorioDetalhado(ExibeRelatorio exibeRelatorio){super(exibeRelatorio);}
 
     @Override
     protected String geraCorpo(List<Produto> produtos) {
@@ -18,6 +15,9 @@ public class RelatorioSimples extends GeradorDeRelatorio {
         StringBuilder corpo = new StringBuilder();
 
         for (Produto p : produtos) {
+            corpo.append(String.format("Nome: %s\n",p.getNomeDoProduto()));
+            corpo.append(String.format("Preço: $%.2f\n",p.getPrecoDoProduto()));
+            corpo.append("\n");
             totalDeProdutosVendidos += p.getPrecoDoProduto();
         }
 
@@ -30,7 +30,5 @@ public class RelatorioSimples extends GeradorDeRelatorio {
     @Override
     protected void geraExibicao(String cabecalho, String corpo) {
         this.exibeRelatorio.geraExibicaoDoRelatorio(cabecalho, corpo);
-
     }
-
 }
