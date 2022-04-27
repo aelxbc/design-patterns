@@ -17,13 +17,6 @@ public class Main {
     public static void main(String[] args) {
         Connection connection = DatabaseConnection.getConnection();
 
-//        List<Produto> produtos = new ArrayList<>();
-//
-//        produtos.add(new Produto("Notebook", 2999.99));
-//        produtos.add(new Produto("Smartphone", 1999.99));
-//        produtos.add(new Produto("Airpods", 699.99));
-//        produtos.add(new Produto("Caneta inteligente", 99.99));
-
         List<Produto> produtos = getProdutos(connection);
 
         ExibeRelatorioNoConsole erc = new ExibeRelatorioNoConsole();
@@ -39,7 +32,7 @@ public class Main {
         try{
             Statement stmt = connection.createStatement();
 
-            ResultSet resultSet = stmt.executeQuery("select * from produtos ");
+            ResultSet resultSet = stmt.executeQuery("select * from produtos");
 
             while(resultSet.next()){
                 String nome = resultSet.getString("nome");
