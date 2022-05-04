@@ -10,6 +10,7 @@ import bridge.exibicao.ExibeRelatorioNoConsole;
 import bridge.modelo.Produto;
 import bridge.relatorios.GeradorDeRelatorio;
 import bridge.relatorios.RelatorioSimples;
+import composite.TrechoAereoComposto;
 import composite.TrechoAereoSimples;
 
 public class Main {
@@ -40,5 +41,8 @@ public class Main {
         TrechoAereoSimples tas2 = new TrechoAereoSimples("Belém", "Brasília", 200);
         System.out.println(tas1.getOrigem() + " -> " + tas1.getDestino() + ". Valor: " + tas1.getPreco());
         System.out.println(tas2.getOrigem() + " -> " + tas2.getDestino() + ". Valor: " + tas2.getPreco());
+
+        TrechoAereoComposto tac1 = new TrechoAereoComposto(tas1, tas2, 20);
+        System.out.println(tac1.getOrigem() + " -> " + tac1.getDestino() + ". Valor da taxa: " + tac1.getPreco());
     }
 }
