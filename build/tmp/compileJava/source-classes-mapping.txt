@@ -2,8 +2,8 @@ bridge/relatorios/GeradorDeRelatorio.java
  bridge.relatorios.GeradorDeRelatorio
 Legado/MySqlCommands.java
  Legado.MySqlCommands
-Legado/composite/TrechoComposto.java
- Legado.composite.TrechoComposto
+DBConnection/DatabaseConnection.java
+ DBConnection.DatabaseConnection
 Adapter/Main.java
  Adapter.Main
 Legado/PostgresCommands.java
@@ -12,27 +12,25 @@ DBConnection/ObjectAdapter.java
  DBConnection.ObjectAdapter
 bridge/exibicao/ExibeRelatorioNoConsole.java
  bridge.exibicao.ExibeRelatorioNoConsole
-Legado/composite/TrechoSimples.java
- Legado.composite.TrechoSimples
-Facade/PrintFacade.java
- Facade.PrintFacade
-bridge/relatorios/RelatorioDetalhado.java
- bridge.relatorios.RelatorioDetalhado
-Legado/composite/TrechoAereo.java
- Legado.composite.TrechoAereo
-Legado/composite/TesteMain.java
- Legado.composite.TesteMain
-DBConnection/ClassAdapter.java
- DBConnection.ClassAdapter
-Main.java
- Main
-DBConnection/DBCommands.java
- DBConnection.DBCommands
-bridge/relatorios/RelatorioSimples.java
- bridge.relatorios.RelatorioSimples
-bridge/exibicao/ExibeRelatorio.java
- bridge.exibicao.ExibeRelatorio
 bridge/modelo/Produto.java
  bridge.modelo.Produto
-DBConnection/DatabaseConnection.java
- DBConnection.DatabaseConnection
+DBConnection/DBCommands.java
+ DBConnection.DBCommands
+bridge/relatorios/RelatorioDetalhado.java
+ bridge.relatorios.RelatorioDetalhado
+composite/TrechoAereoComposto.java
+ composite.TrechoAereoComposto
+bridge/exibicao/ExibeRelatorio.java
+ bridge.exibicao.ExibeRelatorio
+DBConnection/ClassAdapter.java
+ DBConnection.ClassAdapter
+bridge/relatorios/RelatorioSimples.java
+ bridge.relatorios.RelatorioSimples
+composite/TrechoAereo.java
+ composite.TrechoAereo
+composite/TrechoAereoSimples.java
+ composite.TrechoAereoSimples
+Main.java
+ Main
+Facade/PrintFacade.java
+ Facade.PrintFacade

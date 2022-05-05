@@ -30,4 +30,11 @@ public class TrechoAereoComposto implements TrechoAereo {
     public double getPreco() {
         return primeiro.getPreco() + segundo.getPreco() + this.taxaConexao;
     }
+
+    @Override
+    public String toString() {
+        String to = String.format("%s\nConexão:\n", primeiro.toString());
+        String td = String.format("%s\n", segundo.toString());
+        return to + td;
+    }
 }

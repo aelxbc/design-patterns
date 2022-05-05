@@ -1,6 +1,7 @@
 package Facade;
 
-import Legado.composite.TrechoAereo;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import composite.TrechoAereo;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itextpdf.text.*;
@@ -50,9 +51,18 @@ public class PrintFacade {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            mapper.writeValue(new File(file), passagem);
+            ObjectNode info = mapper.createObjectNode();
+            info.put("Passageiro",nome);
+            info.put("Data da Viagem",data);
 
-            JsonNode json = mapper.valueToTree(passagem);
+            ObjectNode viagem = mapper.createObjectNode();
+            viagem.put("Partida",passagem.getOrigem());
+            viagem.put("Destino Final",passagem.getDestino());
+
+            info.put("Valor total",passagem.getPreco());
+            info.set("Viagem", viagem);
+
+            mapper.writeValue(new File(file), info);
         } catch (Exception e) {
             e.printStackTrace();
         }

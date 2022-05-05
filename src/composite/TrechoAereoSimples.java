@@ -26,4 +26,12 @@ public class TrechoAereoSimples implements TrechoAereo {
     public double getPreco() {
         return preco;
     }
+
+    @Override
+    public String toString() {
+        return
+                String.format("Origem: %s\n" +
+                        "Destino: %s\n" +
+                        "Preço: R$ %.2f\n", origem, destino, preco);
+    }
 }
