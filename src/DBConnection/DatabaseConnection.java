@@ -21,10 +21,10 @@ public class DatabaseConnection {
             String password = "dio";
 
             try {
-//                Class.forName("org.postgresql.Driver");
-                Class.forName("org.sqlite.JDBC");
-//                connection = DriverManager.getConnection(url, user, password);
-                connection = DriverManager.getConnection(urlSqlite);
+                Class.forName("org.postgresql.Driver");
+//                Class.forName("org.sqlite.JDBC");
+                connection = DriverManager.getConnection(url, user, password);
+//                connection = DriverManager.getConnection(urlSqlite);
 
                 System.out.println("Conexão estabelecida");
             } catch (Exception e) {
