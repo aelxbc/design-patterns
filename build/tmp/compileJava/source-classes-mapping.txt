@@ -10,18 +10,18 @@ DBConnection/ObjectAdapter.java
  DBConnection.ObjectAdapter
 bridge/exibicao/ExibeRelatorioNoConsole.java
  bridge.exibicao.ExibeRelatorioNoConsole
-proxy/Main.java
- proxy.Main
-proxy/MovieService.java
- proxy.MovieService
 Facade/PrintFacade.java
  Facade.PrintFacade
 bridge/relatorios/RelatorioDetalhado.java
  bridge.relatorios.RelatorioDetalhado
+composite/TrechoAereoComposto.java
+ composite.TrechoAereoComposto
+decorator/ObjectAdapterDecorator.java
+ decorator.ObjectAdapterDecorator
+DBConnection/DatabaseConnection.java
+ DBConnection.DatabaseConnection
 composite/TrechoAereoSimples.java
  composite.TrechoAereoSimples
-proxy/MovieDAO.java
- proxy.MovieDAO
 DBConnection/ClassAdapter.java
  DBConnection.ClassAdapter
 Main.java
@@ -36,11 +36,9 @@ bridge/exibicao/ExibeRelatorio.java
  bridge.exibicao.ExibeRelatorio
 bridge/modelo/Produto.java
  bridge.modelo.Produto
-proxy/MovieCacheDAO.java
- proxy.MovieCacheDAO
-DBConnection/DatabaseConnection.java
- DBConnection.DatabaseConnection
-proxy/Movie.java
- proxy.Movie
-composite/TrechoAereoComposto.java
- composite.TrechoAereoComposto
+decorator/OptionsDecorator.java
+ decorator.OptionsDecorator
+decorator/Main.java
+ decorator.Main
+decorator/ProductCache.java
+ decorator.ProductCache

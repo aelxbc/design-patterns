@@ -13,7 +13,7 @@ public class Main {
 
         Connection connection = DatabaseConnection.getConnection();
 
-        DBCommands db = new ObjectAdapter(new MySqlCommands(connection));
+        DBCommands db = new ObjectAdapter(new MySqlCommands());
 
         db.insert("Impressora 3d", 8000);
 

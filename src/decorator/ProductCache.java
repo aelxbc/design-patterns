@@ -14,9 +14,9 @@ public class ProductCache implements DBCommands {
     private DBCommands dbCommands;
     private Map<Integer, Produto> cache;
 
-    public ProductCache() {
+    public ProductCache(DBCommands dbCommands) {
         Connection connection = DatabaseConnection.getConnection();
-        this.dbCommands = new ObjectAdapterDecorator(new MySqlCommands());
+        this.dbCommands = dbCommands;
         cache = new HashMap<>();
     }
 

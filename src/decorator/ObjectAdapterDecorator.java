@@ -1,42 +1,33 @@
 package decorator;
 
-import DBConnection.DatabaseConnection;
-import DBConnection.ObjectAdapter;
-import Legado.MySqlCommands;
+import DBConnection.DBCommands;
 import bridge.modelo.Produto;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+public abstract class ObjectAdapterDecorator implements DBCommands {
 
-public class ObjectAdapterDecorator extends ObjectAdapter {
+    private DBCommands dbCommands;
 
-    public ObjectAdapterDecorator(MySqlCommands msql) {
-        super(msql);
+    public ObjectAdapterDecorator(DBCommands dbCommands) {
+        this.dbCommands = dbCommands;
     }
 
-    public List<Produto> getAll(int id){
+    @Override
+    public void insert(String nome, double preco) {
+        dbCommands.insert(nome, preco);
+    }
 
-        Connection connection = DatabaseConnection.getConnection();
-        List<Produto> produtos = new ArrayList<>();
+    @Override
+    public Produto getById(int id) {
+        return dbCommands.getById(id);
+    }
 
-        try{
-            Statement stmt = connection.createStatement();
+    @Override
+    public void delete(int id) {
+        dbCommands.delete(id);
+    }
 
-            ResultSet resultSet = stmt.executeQuery("select * from produtos");
-
-            while(resultSet.next()){
-                String nome = resultSet.getString("nome");
-                double preco = resultSet.getDouble("preco");
-
-                produtos.add(new Produto(nome, preco));
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return produtos;
+    @Override
+    public void update(int id, String nome, double preco) {
+        dbCommands.update(id, nome, preco);
     }
 }
