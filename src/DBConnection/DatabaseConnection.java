@@ -14,7 +14,7 @@ public class DatabaseConnection {
 
         if (connection == null) {
 
-            String url = "jdbc:postgresql://localhost:5432/produtos";
+//            String url = "jdbc:postgresql://localhost:5432/movies";
             String urlSqlite = "jdbc:sqlite:E:\\Aulas\\Java\\designpatterns" +
                     "/produtos.db";
             String user = "dio";
@@ -22,9 +22,9 @@ public class DatabaseConnection {
 
             try {
                 Class.forName("org.postgresql.Driver");
-//                Class.forName("org.sqlite.JDBC");
-                connection = DriverManager.getConnection(url, user, password);
-//                connection = DriverManager.getConnection(urlSqlite);
+                Class.forName("org.sqlite.JDBC");
+//                connection = DriverManager.getConnection(url, user, password);
+                connection = DriverManager.getConnection(urlSqlite);
 
                 System.out.println("Conexão estabelecida");
             } catch (Exception e) {

@@ -1,6 +1,7 @@
 package DBConnection;
 
 import Legado.PostgresCommands;
+import bridge.modelo.Produto;
 
 import java.sql.Connection;
 
@@ -14,6 +15,11 @@ public class ClassAdapter extends PostgresCommands implements DBCommands{
     @Override
     public void insert(String nome, double preco) {
         super.postgresInsert(nome, preco);
+    }
+
+    @Override
+    public Produto getById(int id) {
+        return null;
     }
 
     @Override
