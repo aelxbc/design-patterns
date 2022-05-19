@@ -14,9 +14,9 @@ public class DatabaseConnection {
 
         if (connection == null) {
 
-            String url = "jdbc:postgresql://localhost:5432/produtos";
-            String urlSqlite = "jdbc:sqlite:E:\\Aulas\\Java\\designpatterns" +
-                    "/produtos.db";
+            String url = "jdbc:postgresql://localhost:5432/movies";
+//            String urlSqlite = "jdbc:sqlite:E:\\Aulas\\Java\\designpatterns" +
+//                    "/produtos.db";
             String user = "dio";
             String password = "dio";
 
