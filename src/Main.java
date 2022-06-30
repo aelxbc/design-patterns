@@ -14,6 +14,8 @@ import bridge.relatorios.RelatorioDetalhado;
 import bridge.relatorios.RelatorioSimples;
 import composite.TrechoAereoComposto;
 import composite.TrechoAereoSimples;
+import visitor.*;
+import interpreter.*;
 
 public class Main {
 
@@ -38,24 +40,40 @@ public class Main {
 //        ExibeRelatorioNoConsole erc = new ExibeRelatorioNoConsole();
 //        GeradorDeRelatorio rs = new RelatorioSimples(erc);
 //        rs.geraRelatorios(produtos);
+//
+//        TrechoAereoSimples tas1 = new TrechoAereoSimples("Macapá", "Belém", 250);
+//        TrechoAereoSimples tas2 = new TrechoAereoSimples("Belém", "Brasília", 200);
+//        System.out.println(tas1.getOrigem() + " -> " + tas1.getDestino() + ". Valor: " + tas1.getPreco());
+//        System.out.println(tas2.getOrigem() + " -> " + tas2.getDestino() + ". Valor: " + tas2.getPreco());
+//
+//        TrechoAereoComposto tac1 = new TrechoAereoComposto(tas1, tas2, 20);
+//        System.out.println(tac1.getOrigem() + " -> " + tac1.getDestino() + ". Valor da taxa: " + tac1.getPreco());
+//
+//        TrechoAereoSimples tas3 = new TrechoAereoSimples("Brasília",
+//                "Porto Alegre", 800);
+//        TrechoAereoComposto tac2 = new TrechoAereoComposto(tac1, tas3, 10);
+//        PrintFacade printer = new PrintFacade();
+//
+//        printer.savePdf("Kanye West", "10-11-2021",tac2,"teste" +
+//                ".pdf");
+//
+//        printer.saveJSON("Marilyn Manson", "10-11-2021",tac1,"teste" +
+//                ".json");
+//
+//        Compra c = new Compra("Caderno", "13/06/2022", 19.99);
+//        Relatorio r = new ComprasCliente(c);
+//        //carrega dados no relatório
+//        FormatoVisitante fv = new VisitanteHTML();
+//        fv.visitarTitulo();
+//        String resultado = (String) r.gerarRelatorio(fv);
 
-        TrechoAereoSimples tas1 = new TrechoAereoSimples("Macapá", "Belém", 250);
-        TrechoAereoSimples tas2 = new TrechoAereoSimples("Belém", "Brasília", 200);
-        System.out.println(tas1.getOrigem() + " -> " + tas1.getDestino() + ". Valor: " + tas1.getPreco());
-        System.out.println(tas2.getOrigem() + " -> " + tas2.getDestino() + ". Valor: " + tas2.getPreco());
-
-        TrechoAereoComposto tac1 = new TrechoAereoComposto(tas1, tas2, 20);
-        System.out.println(tac1.getOrigem() + " -> " + tac1.getDestino() + ". Valor da taxa: " + tac1.getPreco());
-
-        TrechoAereoSimples tas3 = new TrechoAereoSimples("Brasília",
-                "Porto Alegre", 800);
-        TrechoAereoComposto tac2 = new TrechoAereoComposto(tac1, tas3, 10);
-        PrintFacade printer = new PrintFacade();
-
-        printer.savePdf("Kanye West", "10-11-2021",tac2,"teste" +
-                ".pdf");
-
-        printer.saveJSON("Marilyn Manson", "10-11-2021",tac1,"teste" +
-                ".json");
+        Operador somar = new Somar(new Numero(3), new Numero(4));
+        System.out.println(somar.interpretar());
+        Operador subtrair = new Subtrair(somar, new Numero(3));
+        System.out.println(subtrair.interpretar());
+        Operador multiplicar = new Multiplicar(subtrair, somar);
+        System.out.println(multiplicar.interpretar());
+        Operador dividir = new Dividir(new Numero(30), multiplicar);
+        System.out.println(dividir.interpretar());
     }
 }
