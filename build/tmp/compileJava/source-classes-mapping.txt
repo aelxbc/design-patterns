@@ -1,44 +1,62 @@
-bridge/relatorios/GeradorDeRelatorio.java
- bridge.relatorios.GeradorDeRelatorio
 Legado/MySqlCommands.java
  Legado.MySqlCommands
-Adapter/Main.java
- Adapter.Main
+visitor/VisitanteHTML.java
+ visitor.VisitanteHTML
 Legado/PostgresCommands.java
  Legado.PostgresCommands
-DBConnection/ObjectAdapter.java
- DBConnection.ObjectAdapter
-bridge/exibicao/ExibeRelatorioNoConsole.java
- bridge.exibicao.ExibeRelatorioNoConsole
-Facade/PrintFacade.java
- Facade.PrintFacade
 bridge/relatorios/RelatorioDetalhado.java
  bridge.relatorios.RelatorioDetalhado
-composite/TrechoAereoComposto.java
- composite.TrechoAereoComposto
+decorator/Main.java
+ decorator.Main
 decorator/ObjectAdapterDecorator.java
  decorator.ObjectAdapterDecorator
-DBConnection/DatabaseConnection.java
- DBConnection.DatabaseConnection
 composite/TrechoAereoSimples.java
  composite.TrechoAereoSimples
-DBConnection/ClassAdapter.java
- DBConnection.ClassAdapter
-Main.java
- Main
-DBConnection/DBCommands.java
- DBConnection.DBCommands
-bridge/relatorios/RelatorioSimples.java
- bridge.relatorios.RelatorioSimples
+visitor/ComprasCliente.java
+ visitor.ComprasCliente
+visitor/Compra.java
+ visitor.Compra
 composite/TrechoAereo.java
  composite.TrechoAereo
-bridge/exibicao/ExibeRelatorio.java
- bridge.exibicao.ExibeRelatorio
 bridge/modelo/Produto.java
  bridge.modelo.Produto
 decorator/OptionsDecorator.java
  decorator.OptionsDecorator
-decorator/Main.java
- decorator.Main
+DBConnection/DatabaseConnection.java
+ DBConnection.DatabaseConnection
+bridge/exibicao/ExibeRelatorio.java
+ bridge.exibicao.ExibeRelatorio
+bridge/relatorios/GeradorDeRelatorio.java
+ bridge.relatorios.GeradorDeRelatorio
+Adapter/Main.java
+ Adapter.Main
+DBConnection/ObjectAdapter.java
+ DBConnection.ObjectAdapter
+visitor/FormatoVisitante.java
+ visitor.FormatoVisitante
+bridge/exibicao/ExibeRelatorioNoConsole.java
+ bridge.exibicao.ExibeRelatorioNoConsole
+Facade/PrintFacade.java
+ Facade.PrintFacade
+visitor/Relatorio.java
+ visitor.Relatorio
 decorator/ProductCache.java
  decorator.ProductCache
+composite/TrechoAereoComposto.java
+ composite.TrechoAereoComposto
+DBConnection/ClassAdapter.java
+ DBConnection.ClassAdapter
+DBConnection/DBCommands.java
+ DBConnection.DBCommands
+bridge/relatorios/RelatorioSimples.java
+ bridge.relatorios.RelatorioSimples
+Main.java
+ Main
+iterator/NomesCollection.java
+ iterator.NomesCollection
+ iterator.NomesCollection$1
+ iterator.NomesCollection$NomeIterator
+iterator/Iterator.java
+ iterator.Iterator
+iterator/Container.java
+ iterator.Container

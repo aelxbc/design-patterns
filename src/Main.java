@@ -14,6 +14,7 @@ import bridge.relatorios.RelatorioDetalhado;
 import bridge.relatorios.RelatorioSimples;
 import composite.TrechoAereoComposto;
 import composite.TrechoAereoSimples;
+import iterator.*;
 
 public class Main {
 
@@ -39,23 +40,30 @@ public class Main {
 //        GeradorDeRelatorio rs = new RelatorioSimples(erc);
 //        rs.geraRelatorios(produtos);
 
-        TrechoAereoSimples tas1 = new TrechoAereoSimples("Macapá", "Belém", 250);
-        TrechoAereoSimples tas2 = new TrechoAereoSimples("Belém", "Brasília", 200);
-        System.out.println(tas1.getOrigem() + " -> " + tas1.getDestino() + ". Valor: " + tas1.getPreco());
-        System.out.println(tas2.getOrigem() + " -> " + tas2.getDestino() + ". Valor: " + tas2.getPreco());
+//        TrechoAereoSimples tas1 = new TrechoAereoSimples("Macapá", "Belém", 250);
+//        TrechoAereoSimples tas2 = new TrechoAereoSimples("Belém", "Brasília", 200);
+//        System.out.println(tas1.getOrigem() + " -> " + tas1.getDestino() + ". Valor: " + tas1.getPreco());
+//        System.out.println(tas2.getOrigem() + " -> " + tas2.getDestino() + ". Valor: " + tas2.getPreco());
+//
+//        TrechoAereoComposto tac1 = new TrechoAereoComposto(tas1, tas2, 20);
+//        System.out.println(tac1.getOrigem() + " -> " + tac1.getDestino() + ". Valor da taxa: " + tac1.getPreco());
+//
+//        TrechoAereoSimples tas3 = new TrechoAereoSimples("Brasília",
+//                "Porto Alegre", 800);
+//        TrechoAereoComposto tac2 = new TrechoAereoComposto(tac1, tas3, 10);
+//        PrintFacade printer = new PrintFacade();
+//
+//        printer.savePdf("Kanye West", "10-11-2021",tac2,"teste" +
+//                ".pdf");
+//
+//        printer.saveJSON("Marilyn Manson", "10-11-2021",tac1,"teste" +
+//                ".json");
 
-        TrechoAereoComposto tac1 = new TrechoAereoComposto(tas1, tas2, 20);
-        System.out.println(tac1.getOrigem() + " -> " + tac1.getDestino() + ". Valor da taxa: " + tac1.getPreco());
+        NomesCollection nc = new NomesCollection();
 
-        TrechoAereoSimples tas3 = new TrechoAereoSimples("Brasília",
-                "Porto Alegre", 800);
-        TrechoAereoComposto tac2 = new TrechoAereoComposto(tac1, tas3, 10);
-        PrintFacade printer = new PrintFacade();
-
-        printer.savePdf("Kanye West", "10-11-2021",tac2,"teste" +
-                ".pdf");
-
-        printer.saveJSON("Marilyn Manson", "10-11-2021",tac1,"teste" +
-                ".json");
+        for(Iterator iter = nc.getIterator(); iter.hasNext();) {
+            String nome = (String) iter.next();
+            System.out.println("Nome : " + nome);
+        }
     }
 }
